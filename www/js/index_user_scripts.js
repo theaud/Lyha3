@@ -56,25 +56,56 @@
     
         /* button  #Validation1 */
     $(document).on("click", "#Validation1", function(evt)
-    {var texte=document.getElementById("Texte_Texte").value ;
-     document.getElementById("Enoncer_Texte_Texte").innerHTML+=" saisie" ;
+    { var texte=document.getElementById("Saisie_Texte_Texte").value ;
+        document.getElementById("Saisie_Texte_Texte").value="" ;
+  
+        
+        
+       // if(texte==getReponse(NBenigme).toLowerCase())
      
-     //document.getElementById("Entrer_Texte_Texte").value="" ;
-     if(texte.toLowerCase()==getReponse(currentEnigme).toLowerCase()||texte.toLowerCase()=="cheat") 
-            {currentEnigme++;
-            chargerPaterne(currentEnigme);
+     
+     document.getElementById("Enoncer_Texte_Texte").innerHTML+=" "+(texte.toLowerCase()==getReponse(currentEnigme)) ;
+     
+     
+     
+          if(texte.toLowerCase()==getReponse(currentEnigme).toLowerCase()||texte.toLowerCase()=="cheat") 
+            {   /*
+                 currentEnigme++;
+            
+                charger_Texte_Texte(currentEnigme)
+                activate_subpage("#Texte_Texte"); 
+             */
+                // document.getElementById("Enoncer_Texte_Texte").innerHTML=getEnoncer(NBenigme);
+                document.getElementById("Enoncer_Texte_Texte").innerHTML+=" bon" ;
             }
         else
-            { document.getElementById("Enoncer_Texte_Texte").innerHTML+=" Erreur" ;}
+            {
+                document.getElementById("Enoncer_Texte_Texte").innerHTML+=" Erreur" ;
+            }
     });
     
+  
+  
+  
+  
   
   
       
           /* button  #Validation2 */
     $(document).on("click", "#Validation2", function(evt)
     {
-        /* your code goes here */ 
+       var texte=document.getElementById("Image_Texte").value ;
+        
+       if(texte.toLowerCase()==getReponse(currentEnigme).toLowerCase()||texte.toLowerCase()=="cheat") 
+            {currentEnigme++;
+            chargerPaterne(currentEnigme);
+            }
+        else
+            { $('.alert-text').on('click', function () {myApp.alert('Alerte');}); } 
+        
+        
+        
+   
     });  
     
   
