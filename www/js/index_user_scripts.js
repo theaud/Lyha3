@@ -6,7 +6,23 @@
    hook up event handlers 
  */
  function register_event_handlers()
- {var CurrentEnigme=1;
+ {  var CurrentEnigme=1;    
+    var EnigmeDebloquer=10;  
+    function getCurrent()       {return CurrentEnigme;}      
+    function setCurrent(id)     { CurrentEnigme=id;}
+    function addCurrent()       {CurrentEnigme++;}
+  
+    function getDebloquer()     {return EnigmeDebloquer;}   
+    function setDebloquer(id)   { EnigmeDebloquer=id;}
+    function addDebloquer()     {EnigmeDebloquer++;}
+  
+  function chargerEnigme(id){if(EnigmeDebloquer>=id){CurrentEnigme=id;chargerPaterne(CurrentEnigme);}
+                          else{ myApp.addNotification({
+                              title: 'Enigme non deverouiller',
+                              subtitle: 'Vous n\'avez pas débloquer l\'egnime choisie',
+                              message: 'Vous avez actuelment débloquer les '+EnigmeDebloquer+" premiere enigme"
+                            }); }
+                         }
   
 /* button  Jouer */         $(document).on("click", ".uib_w_2", function(evt)    {activate_subpage("#Chapitre1");});
 /* button  Option */        $(document).on("click", ".uib_w_3", function(evt)    {activate_subpage("#Chapitre2");});
@@ -31,88 +47,65 @@
 /* button  Chapitre 5 */    $(document).on("click", ".uib_w_28", function(evt)      {activate_subpage("#Chapitre5");        });
 /* button  Final */         $(document).on("click", ".uib_w_29", function(evt)           {activate_subpage("#Final");            });     
 
-/* button  Enigme 1.0 */    $(document).on("click", ".uib_w_14", function(evt)    {CurrentEnigme=0; chargerPaterne(CurrentEnigme);});
-/* button  Enigme 1.1 */    $(document).on("click", ".uib_w_12", function(evt)    {CurrentEnigme=1; chargerPaterne(CurrentEnigme);});
-/* button  Enigme 1.2 */    $(document).on("click", ".uib_w_11", function(evt)    {CurrentEnigme=2; chargerPaterne(CurrentEnigme);});
-/* button  Enigme 1.3 */    $(document).on("click", ".uib_w_13", function(evt)    {CurrentEnigme=3; chargerPaterne(CurrentEnigme);});
-/* button  Enigme 1.4 */    $(document).on("click", ".uib_w_15", function(evt)    {CurrentEnigme=4; chargerPaterne(CurrentEnigme);});
-/* button  Enigme 1.5 */    $(document).on("click", ".uib_w_16", function(evt)    {CurrentEnigme=5; chargerPaterne(CurrentEnigme);});
-/* button  Enigme 1.6 */    $(document).on("click", ".uib_w_17", function(evt)    {CurrentEnigme=6; chargerPaterne(CurrentEnigme);});
-/* button  Enigme 1.7 */    $(document).on("click", ".uib_w_18", function(evt)    {CurrentEnigme=7; chargerPaterne(CurrentEnigme);});
-/* button  Enigme 1.8 */    $(document).on("click", ".uib_w_19", function(evt)    {CurrentEnigme=8; chargerPaterne(CurrentEnigme);});
-/* button  Enigme 1.9 */    $(document).on("click", ".uib_w_20", function(evt)    {CurrentEnigme=9; chargerPaterne(CurrentEnigme);});
-/* button  Enigme 1.10 */    $(document).on("click", ".uib_w_21", function(evt)   {CurrentEnigme=10; chargerPaterne(CurrentEnigme);});
+/* button  Enigme 1.0 */    $(document).on("click", ".uib_w_14", function(evt)     {chargerEnigme(0); });
+/* button  Enigme 1.1 */    $(document).on("click", ".uib_w_12", function(evt)     {chargerEnigme(1); });
+/* button  Enigme 1.2 */    $(document).on("click", ".uib_w_11", function(evt)     {chargerEnigme(2); });
+/* button  Enigme 1.3 */    $(document).on("click", ".uib_w_13", function(evt)     {chargerEnigme(3); });
+/* button  Enigme 1.4 */    $(document).on("click", ".uib_w_15", function(evt)     {chargerEnigme(4); });
+/* button  Enigme 1.5 */    $(document).on("click", ".uib_w_16", function(evt)     {chargerEnigme(5); });
+/* button  Enigme 1.6 */    $(document).on("click", ".uib_w_17", function(evt)     {chargerEnigme(6); });
+/* button  Enigme 1.7 */    $(document).on("click", ".uib_w_18", function(evt)     {chargerEnigme(7); });
+/* button  Enigme 1.8 */    $(document).on("click", ".uib_w_19", function(evt)     {chargerEnigme(8); });
+/* button  Enigme 1.9 */    $(document).on("click", ".uib_w_20", function(evt)     {chargerEnigme(9); });
+/* button  Enigme 1.10 */    $(document).on("click", ".uib_w_21", function(evt)    {chargerEnigme(10);});
 
-/* button  Enigme 2.1 */    $(document).on("click", ".uib_w_32", function(evt)    {CurrentEnigme=11; chargerPaterne(CurrentEnigme);});
-/* button  Enigme 2.2 */    $(document).on("click", ".uib_w_33", function(evt)    {CurrentEnigme=12; chargerPaterne(CurrentEnigme);});
-/* button  Enigme 2.3 */    $(document).on("click", ".uib_w_34", function(evt)    {CurrentEnigme=13; chargerPaterne(CurrentEnigme);});
-/* button  Enigme 2.4 */    $(document).on("click", ".uib_w_35", function(evt)    {CurrentEnigme=14; chargerPaterne(CurrentEnigme);});
-  
-      
-  
-
+/* button  Enigme 2.1 */    $(document).on("click", ".uib_w_32", function(evt)     {chargerEnigme(11); });
+/* button  Enigme 2.2 */    $(document).on("click", ".uib_w_33", function(evt)     {chargerEnigme(12); });
+/* button  Enigme 2.3 */    $(document).on("click", ".uib_w_34", function(evt)     {chargerEnigme(13); });
+/* button  Enigme 2.4 */    $(document).on("click", ".uib_w_35", function(evt)     {chargerEnigme(14); });
     
-
-    
-        /* button  #Validation1 */
+/* button  #Validation1 */
     $(document).on("click", "#Validation1", function(evt)
     { var texte=document.getElementById("Saisie_Texte_Texte").value ;
-        document.getElementById("Saisie_Texte_Texte").value="" ;
-  
-        
-        
-       // if(texte==getReponse(NBenigme).toLowerCase())
-     
-     
-     document.getElementById("Enoncer_Texte_Texte").innerHTML+=" "+(texte.toLowerCase()==getReponse(currentEnigme)) ;
-     
-     
-     
-          if(texte.toLowerCase()==getReponse(currentEnigme).toLowerCase()||texte.toLowerCase()=="cheat") 
-            {   /*
-                 currentEnigme++;
-            
-                charger_Texte_Texte(currentEnigme)
-                activate_subpage("#Texte_Texte"); 
-             */
-                // document.getElementById("Enoncer_Texte_Texte").innerHTML=getEnoncer(NBenigme);
-                document.getElementById("Enoncer_Texte_Texte").innerHTML+=" bon" ;
-            }
-        else
-            {
-                document.getElementById("Enoncer_Texte_Texte").innerHTML+=" Erreur" ;
-            }
+     document.getElementById("Saisie_Texte_Texte").value="" ;
+
+     if(texte.toLowerCase()==getReponse(getCurrent()).toLowerCase()||texte.toLowerCase()=="cheat") 
+        {  suivant();        myApp.addNotification({title:'Correct'});        }
+    else
+        { myApp.addNotification({title: 'Ceci n\'est pas la solution'});}
     });
     
-  
-  
-  
-  
-  
-  
+ 
       
-          /* button  #Validation2 */
+/* button  #Validation2 */
     $(document).on("click", "#Validation2", function(evt)
-    {
-       var texte=document.getElementById("Image_Texte").value ;
-        
-       if(texte.toLowerCase()==getReponse(currentEnigme).toLowerCase()||texte.toLowerCase()=="cheat") 
-            {currentEnigme++;
-            chargerPaterne(currentEnigme);
-            }
-        else
-            { $('.alert-text').on('click', function () {myApp.alert('Alerte');}); } 
-        
-        
-        
-   
+    {var texte=document.getElementById("Entrer_Image_Texte").value ;
+     document.getElementById("Entrer_Image_Texte").value="" ;
+
+     if(texte.toLowerCase()==getReponse(getCurrent()).toLowerCase()||texte.toLowerCase()=="cheat") 
+        {suivant();        myApp.addNotification({title:'Correct'});        }
+    else
+        { myApp.addNotification({title: 'Ceci n\'est pas la solution'});}
     });  
     
   
   
-    }
+/* button  test */
+    $(document).on("click", ".uib_w_87", function(evt)
+    {
+        /* Notifications are created using custom js 
+         For examples and documentation visit http://www.idangero.us/framework7/docs/notifications.html */
+        myApp.addNotification({
+          title: 'Enigme non deverouiller',
+          subtitle: 'Custom notification w/ media',
+          message: 'Vous n\'avez pas débloquer l\'egnime choisie'
+        }); 
+         return false;
+    });
+    
+  
 
-
+function suivant()  {addCurrent();addDebloquer();chargerEnigme(getCurrent());   }
     
 function getEgnime(Id) {
     var texte="Enigme "+Id+" :<br>";
@@ -121,7 +114,7 @@ function getEgnime(Id) {
         switch(Id)
             {case 0:return texte+"b8 88 ? 98";
                     
-            case 1:return texte+"cf image";
+            case 1:return "images/Arrow.png";
                     
             case 2:return texte+"64 chiens sont inscrits pour un concours de beauté canin réservé aux chiens de races, parmi ces 64 chiens de races, 50 % arrivent en huitième de finale. Lors des de cette épreuve, 50% sont éliminés, arrivent les quarts où,face à un jury énervé par le temps pluvieux, encore 50% sont éliminés. Finalement, après des heures de délibérations,le jury décide enfin qui sera envoyé en finale. Parmi les gagnants, quel pourcentage à gagné ?";
                     
@@ -146,7 +139,7 @@ function getEgnime(Id) {
             }       
     
         
-}
+    }
      function getReponse(Id) {
         switch(Id)
             {case 0:return "87";
@@ -162,14 +155,15 @@ function getEgnime(Id) {
             case 10:return "aucun";
              default:return "limite depasser";     
             }       
-}   
+     }   
     
     function charger_Texte_Texte(ID)
     {document.getElementById("Enoncer_Texte_Texte").innerHTML=getEgnime(ID) ;}
     
      function charger_Image_Texte(ID)
-    {//§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
-    
+    {document.getElementById("Image_Texte").setAttribute("src", getEgnime(ID));;
+  
+       
     }
     
     
@@ -192,7 +186,14 @@ function getEgnime(Id) {
                 default:break;
             }     
     }
-
+      /* button  Sortir */
+    $(document).on("click", ".uib_w_86", function(evt)
+    {
+       myApp.exitApp();
+         return false;
+    });
+    
+    }
     
     
     
