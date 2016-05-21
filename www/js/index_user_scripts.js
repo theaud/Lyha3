@@ -59,11 +59,53 @@
 /* button  Enigme 1.9 */    $(document).on("click", ".uib_w_20", function(evt)     {chargerEnigme(9); });
 /* button  Enigme 1.10 */    $(document).on("click", ".uib_w_21", function(evt)    {chargerEnigme(10);});
 
-/* button  Enigme 2.1 */    $(document).on("click", ".uib_w_32", function(evt)     {chargerEnigme(11); });
-/* button  Enigme 2.2 */    $(document).on("click", ".uib_w_33", function(evt)     {chargerEnigme(12); });
-/* button  Enigme 2.3 */    $(document).on("click", ".uib_w_34", function(evt)     {chargerEnigme(13); });
-/* button  Enigme 2.4 */    $(document).on("click", ".uib_w_35", function(evt)     {chargerEnigme(14); });
+/* button  Enigme 2.1 */    $(document).on("click", ".uib_w_32", function(evt)    {chargerEnigme(11); });
+/* button  Enigme 2.2 */    $(document).on("click", ".uib_w_33", function(evt)    {chargerEnigme(12); });
+/* button  Enigme 2.3 */    $(document).on("click", ".uib_w_34", function(evt)    {chargerEnigme(13); });
+/* button  Enigme 2.4 */    $(document).on("click", ".uib_w_35", function(evt)    {chargerEnigme(14); });
+/* button  Enigme 2.5 */    $(document).on("click", ".uib_w_87", function(evt)    {chargerEnigme(15); });
+/* button  Enigme 2.6 */    $(document).on("click", ".uib_w_88", function(evt)    {chargerEnigme(16); });
+/* button  Enigme 2.7 */    $(document).on("click", ".uib_w_89", function(evt)    {chargerEnigme(17); });
+/* button  Enigme 2.8 */    $(document).on("click", ".uib_w_90", function(evt)    {chargerEnigme(18); });
+/* button  Enigme 2.9 */    $(document).on("click", ".uib_w_91", function(evt)    {chargerEnigme(19); });
+/* button  Enigme 2.10 */    $(document).on("click", ".uib_w_92", function(evt)   {chargerEnigme(20); });
  
+/* button  Enigme 3.1 */    $(document).on("click", ".uib_w_78", function(evt)    {chargerEnigme(21); });
+/* button  Enigme 3.2 */    $(document).on("click", ".uib_w_79", function(evt)    {chargerEnigme(22); });
+/* button  Enigme 3.3 */    $(document).on("click", ".uib_w_80", function(evt)    {chargerEnigme(23); });
+/* button  Enigme 3.4 */    $(document).on("click", ".uib_w_93", function(evt)    {chargerEnigme(24); });
+/* button  Enigme 3.5 */    $(document).on("click", ".uib_w_94", function(evt)    {chargerEnigme(25); });
+/* button  Enigme 3.6 */    $(document).on("click", ".uib_w_95", function(evt)    {chargerEnigme(26); });
+/* button  Enigme 3.7 */    $(document).on("click", ".uib_w_96", function(evt)    {chargerEnigme(27); });
+/* button  Enigme 3.8 */    $(document).on("click", ".uib_w_99", function(evt)    {chargerEnigme(28); });
+/* button  Enigme 3.9 */    $(document).on("click", ".uib_w_98", function(evt)    {chargerEnigme(29); });
+/* button  Enigme 3.10 */    $(document).on("click", ".uib_w_97", function(evt)   {chargerEnigme(30); });
+        
+  
+/* button  Enigme 4.1 */    $(document).on("click", ".uib_w_73", function(evt)     {chargerEnigme(31); });
+/* button  Enigme 4.2 */    $(document).on("click", ".uib_w_74", function(evt)     {chargerEnigme(32); });
+/* button  Enigme 4.3 */    $(document).on("click", ".uib_w_75", function(evt)     {chargerEnigme(33); });
+/* button  Enigme 4.4 */    $(document).on("click", ".uib_w_100", function(evt)    {chargerEnigme(34); });
+/* button  Enigme 4.5 */    $(document).on("click", ".uib_w_101", function(evt)    {chargerEnigme(35); });
+/* button  Enigme 4.6 */    $(document).on("click", ".uib_w_102", function(evt)    {chargerEnigme(36); });
+/* button  Enigme 4.7 */    $(document).on("click", ".uib_w_103", function(evt)    {chargerEnigme(37); });
+/* button  Enigme 4.8 */    $(document).on("click", ".uib_w_105", function(evt)    {chargerEnigme(38); });
+/* button  Enigme 4.9 */    $(document).on("click", ".uib_w_106", function(evt)    {chargerEnigme(39); });
+/* button  Enigme 4.10 */    $(document).on("click", ".uib_w_104", function(evt)   {chargerEnigme(40); });
+  
+/* button  Enigme 5.1 */    $(document).on("click", ".uib_w_81", function(evt)     {chargerEnigme(41); });
+/* button  Enigme 5.2 */    $(document).on("click", ".uib_w_82", function(evt)     {chargerEnigme(42); });
+/* button  Enigme 5.3 */    $(document).on("click", ".uib_w_83", function(evt)     {chargerEnigme(43); });
+/* button  Enigme 5.4 */    $(document).on("click", ".uib_w_107", function(evt)    {chargerEnigme(44); });
+/* button  Enigme 5.5 */    $(document).on("click", ".uib_w_108", function(evt)    {chargerEnigme(45); });
+/* button  Enigme 5.6 */    $(document).on("click", ".uib_w_109", function(evt)    {chargerEnigme(46); });
+/* button  Enigme 5.7 */    $(document).on("click", ".uib_w_110", function(evt)    {chargerEnigme(47); });
+/* button  Enigme 5.8 */    $(document).on("click", ".uib_w_111", function(evt)    {chargerEnigme(48); });
+/* button  Enigme 5.9 */    $(document).on("click", ".uib_w_113", function(evt)    {chargerEnigme(49); });
+/* button  Enigme 5.10 */    $(document).on("click", ".uib_w_112", function(evt)   {chargerEnigme(50); });
+
+/* button  Derniere enigme */    $(document).on("click", ".uib_w_85", function(evt)  {chargerEnigme(51); });
+
 
 /* button  Sortir */    $(document).on("click", ".uib_w_86", function(evt)    {             return false;    });  
  
@@ -272,7 +314,9 @@ function getEgnime(Id) {
   
 
  
- }
+
+    
+    }
  
     
  document.addEventListener("app.Ready", register_event_handlers, false);
