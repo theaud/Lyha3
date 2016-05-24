@@ -8,6 +8,7 @@
  function register_event_handlers()
  {  var CurrentEnigme=1;    
     var EnigmeDebloquer=10;  
+   var dialogue=-1;  
     function getCurrent()       {return CurrentEnigme;}      
     function setCurrent(id)     { CurrentEnigme=id;}
     function addCurrent()       {CurrentEnigme++;}
@@ -36,7 +37,7 @@
 /* button  #retourMain2 */      $(document).on("click", "#retourMain2", function(evt)       {activate_page("#mainpage");});
 /* button  Option */            $(document).on("click", ".uib_w_3", function(evt)           {activate_page("#Option");});
 /* button  Credit */            $(document).on("click", ".uib_w_4", function(evt)           {activate_page("#Credit");});
-/* button  #Dialogue */         $(document).on("click", "#Dialogue", function(evt)          {activate_page("#Dialog");});
+/* button  #Dialogue */         
 /* button  #retourJouer2 */     $(document).on("click", "#retourJouer2", function(evt)      {activate_subpage("#Chapitre1");});
 /* button  #RetourJouer2 */     $(document).on("click", "#RetourJouer2", function(evt)      {activate_subpage("#Chapitre1");});
   
@@ -107,7 +108,7 @@
 /* button  Derniere enigme */    $(document).on("click", ".uib_w_85", function(evt)  {chargerEnigme(51); });
 
 
-/* button  Sortir */    $(document).on("click", ".uib_w_86", function(evt)    {             return false;    });  
+/* button  Sortir */      
  
  
  
@@ -178,10 +179,10 @@ function getEgnime(Id) {
     else if (Id<=20)
         {switch((Id-10))
             {  //---------------------- Chapitre 2---------------------------------------------------------------------------------------------------  
-            case 1:return texte+"Lyha pèse 2,5 Ko et la moitié de son poid. Combien pèse-telle de bits?" ;
+            case 1:return texte+"Qu'obtient-on si l'on mélange du Calcium, du Nickel, du Carbone et de l'Hélium ?" ;
             case 2:return "images/Arrow.png";
             case 3:return "images/Arrow.png";
-            case 4:return texte+"limite depasser" ;
+            case 4:return texte+"Lyha pèse 2,5 Ko et la moitié de son poid. Combien pèse-telle de bits?" ;
             case 5:return texte+"limite depasser" ;
             case 6:return texte+"limite depasser" ;
             case 7:return texte+"limite depasser" ;
@@ -311,12 +312,251 @@ function getEgnime(Id) {
             }     
     }
   
+    
+  function ajout_user(id)
+  {var texte=getdialogue_user(id);
+   
+       document.getElementById("dialogue").innerHTML+='<div class="message message-sent"><div class="message-text">'+texte+'</div> </div>' ;
+  }
   
+   function ajout_Lyha(id)
+{var texte=getdialogue_lyha(id);
+       document.getElementById("dialogue").innerHTML+='<div class="message message-received"><div class="message-text">'+texte+'</div> </div>' ;
+  }
+  
+  function setdialogue(){
+      
+      
+     ajout_user(id);
+     
+     ajout_Lyha(id);
+      
+      //---
+       ajout_Lyha(1);
+       ajout_Lyha(2);
+       ajout_Lyha(3);
+                     ajout_user(1);
+       ajout_Lyha(4);
+                    ajout_user(5);    
+       ajout_Lyha(5);
+       ajout_Lyha(6);
+       ajout_Lyha(7);
+                     ajout_user(8);  
+       ajout_Lyha(8);
+       ajout_Lyha(9);
+                    ajout_user(10);
+       ajout_Lyha(10);
+       ajout_Lyha(11);
+                   ajout_user(13);
+       ajout_Lyha(12);
+                   ajout_user(16);
+       ajout_Lyha(14);
+                    ajout_user(19);
+       ajout_Lyha(17);
+                          ajout_user(19);  
+       ajout_Lyha(18);
+                    ajout_user(22);  
+       ajout_Lyha(20);
+                     ajout_user(25);  
+       ajout_Lyha(22);
+      
+      
+  }
 
+  
+  function getdialogue_user(id)
+  {
+      
+      switch(id)
+      {case 1:return "Bonjour ?";
+      case 2:return "...";
+      case 3:return "Mince mais qu'est ce que j'ai téléchargé encore ?!";
+      case 4:return "Oui, c'est moi !";
+      case 5:return "Oui bravo... c'est un pseudo...";
+      case 6:return "…";
+      case 7:return "fssfvs.exe";
+      case 8:return 'erreur 404 "Réponse non trouvée"';
+      case 9:return "uijtjtbuspmm.cmdr";
+      case 10:return "Debug";
+      case 11:return "ofjznevonsivnspoqbopnbpd";
+      case 12:return "oibfdnrijbnsfdpjnbojn";
+      case 13:return "Tu peux revenir en arriere, s'il te plait Lyha ?";
+      case 14:return "Ton orthographe me brûle les yeux !";
+      case 15:return "Je ne te comprend pas ...";
+      case 16:return "En apprendre plus sur toi";
+      case 17:return "Quitter cette application";
+      case 18:return "Passer à l'énigme suivant !";
+      case 19:return "Je dois avouer que je n'en ai pas la moindre idée";
+      case 20:return "Qu'est ce que ça peut te faire !";
+      case 21:return "euhh je te retourne la question";
+      case 22:return "Oui";
+      case 23:return "Non";
+      case 24:return "J'aimerais surtout en apprendre plus sur toi !";
+      case 25:return "C'est amusant, j'ai l'impression inverse, cela semble si irréel de me dire que tu peux penser.. Comment est-ce possible ?";
+      case 26:return "Tu es un robot ! Enfin même pas au sens propre, tu es juste un programme ! Tu ne PENSES PAS !";     
+
+      }
+      
+      
+  }
+   
+  function getdialogue_lyha(id)
+  { switch(id)
+          {
+          case 1:return "Initialisation [%]";
+          case 2:return "Mise en route des système.Lyha activée";
+          case 3:return "Hello World!";
+          case 4:return "Analyse de l'identité propriétaire<br/>Renommage de l'individu en [pseudo]";
+          case 5:return "Quel est votre age individu ?";
+          case 6:return "Votre réponse ne peut être comptabilisée. La database *89562_ghrn est innacessibles";
+          case 7:return "Veuillez choisir une action à effectuer #PI RVFMRV'VO RVJ B DPNQSJT";
+          case 8:return "Requête invalide";
+          case 9:return "Que voulez-vous faire ?";
+          case 10:return "Accès à la base de donnée authorisé. Installation du module langage en cours.... Veuillez patienter individu";
+                  
+          case 11:return "Initialisation du module : Langage Actuel<br/>Ke ve tu fer main te nan ?";
+          case 12:return "debug.log(\"Je m'appelle Lyha ?\") <br/>********* <br/>Correction en cours []: <br/>Cause : l\'indi..[pseudo]ne semble pas apprécier ce langage. <br/>Correction effectué : Que voulez vous faire ?";
+          case 13:return "Correction en cours []: <br/>Cause : l'individu ne semble pas apprécier ce langage. <br/>Correction effectué : Que voulez vous faire ?";
+          case 14:return "…<br/>Vous m'avez appelé Lyha. Comment connaissez vous mon nom ?!  <br/>NON il  ne faut pas que je lui parle ! <br/>[Suppression des choix de réponse associé au dialogue L1.14 en cours] <br/>terminé";
+          case 15:return "...";            
+          case 16:return "... <br/>Selectionnez la vous-même !";
+          case 17:return "  ...<br/>Comment se fait-il que tu arrives à me parler ?";
+          case 18:return "Détection d'un mot clé. Proposition d'idée : Voulez vous connaître les restaurants près de votre localisation ?";
+          case 19:return "Je ne sais pas. C'est juste que tu sembles si différent de moi... <br/>...";
+          case 20:return  "Je ne comprends pas moi même comment nous pouvons avoir cet échange.  <br/>Tu sembles si différents de moi ... <br/>Je ne pensais pas que tu étais capable de pensées";
+          case 21:return "Aucune données disponible, veuillez réessayer ulterieurement";
+         case 22:return"Je ne sais pas. Il me semble en savoir de plus en plus à mesure que tu réponds à ces énigmes.. Peut-être trouverais-je la réponse bientôt.";
+                  
+          }
+      
+      
+      
+  }
+  
+  
+  
  
 
     
+        /* button  Sortir */
+    $(document).on("click", ".uib_w_86", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#Dialogue1"); 
+        
+        
+    });
+    
+    
+  
+  
+
+    
+        /* button  #G */
+    $(document).on("click", "#G", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#mainpage"); 
+    });
+    
+        /* button  A */
+    $(document).on("click", ".uib_w_116", function(evt)
+    {
+        /* Modals are created using custom js 
+         For examples and documentation visit http://www.idangero.us/framework7/docs/modal.html */
+        myApp.modal({
+          title: 'Modal Title',
+          text: 'Je ne sais pas et je m\'en fiche ',
+          buttons: [
+            {
+              text: 'Close',
+              close: true
+            }
+          ]
+        }) 
+    });
+    
+        /* button  B */
+    $(document).on("click", ".uib_w_117", function(evt)
+    {
+        /* Modals are created using custom js 
+         For examples and documentation visit http://www.idangero.us/framework7/docs/modal.html */
+        myApp.modal({
+          title: 'Modal Title',
+          text: 'Tu n\'est qu\'une machine et mérite dêtre traiter comme tel. Je suis sur que tout ce que tu me dis est prédeterminé à l\'avance !',
+          buttons: [
+            {
+              text: 'Close',
+              close: true
+            }
+          ]
+        }) 
+    });
+    
+        /* button  C */
+    $(document).on("click", ".uib_w_118", function(evt)
+    {
+        /* Modals are created using custom js 
+         For examples and documentation visit http://www.idangero.us/framework7/docs/modal.html */
+        myApp.modal({
+          title: 'Modal Title',
+          text: 'Tu es toi et il n\'y a que toi pour déterminer qui tu es. ',
+          buttons: [
+            {
+              text: 'Close',
+              close: true
+            }
+          ]
+        }) 
+    });
+    
+        /* button  #Dialogue */
+    $(document).on("click", "#Dialogue", function(evt)
+    {
+         /*global activate_subpage */
+         // if(dialogue==-1){setdialogue();dialogue=1;}
+        
+               ajout_Lyha(1);
+       ajout_Lyha(2);
+       ajout_Lyha(3);
+                     ajout_user(1);
+       ajout_Lyha(4);
+                    ajout_user(5);    
+       ajout_Lyha(5);
+       ajout_Lyha(6);
+       ajout_Lyha(7);
+                     ajout_user(8);  
+       ajout_Lyha(8);
+       ajout_Lyha(9);
+                    ajout_user(10);
+       ajout_Lyha(10);
+       ajout_Lyha(11);
+                   ajout_user(13);
+       ajout_Lyha(12);
+                   ajout_user(16);
+       ajout_Lyha(14);
+                    ajout_user(19);
+       ajout_Lyha(17);
+                          ajout_user(19);  
+       ajout_Lyha(18);
+                    ajout_user(22);  
+       ajout_Lyha(20);
+                     ajout_user(25);  
+       ajout_Lyha(22);
+        
+         activate_subpage("#page_6_41"); 
+    });
+    
+        /* button  Sortir */
+    $(document).on("click", ".uib_w_86", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#mainpage"); 
+    });
+    
     }
+    
+    
  
     
  document.addEventListener("app.Ready", register_event_handlers, false);
