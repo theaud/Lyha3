@@ -461,51 +461,61 @@ function getEgnime(Id) {
     
         /* button  A */
     $(document).on("click", ".uib_w_116", function(evt)
-    {
-        /* Modals are created using custom js 
-         For examples and documentation visit http://www.idangero.us/framework7/docs/modal.html */
-        myApp.modal({
-          title: 'Modal Title',
+    {     myApp.modal({
           text: 'Je ne sais pas et je m\'en fiche ',
           buttons: [
             {
               text: 'Close',
               close: true
-            }
+            },
+              { text: 'Valider',
+                onClick: function () {
+                    var texte="Je ne sais pas et je m\'en fiche ";
+                    document.getElementById("dialogue").innerHTML+='<div class="message message-sent"><div class="message-text">'+texte+'</div> </div>' ;
+                }
+              }
           ]
         }) 
     });
     
         /* button  B */
     $(document).on("click", ".uib_w_117", function(evt)
-    {
-        /* Modals are created using custom js 
-         For examples and documentation visit http://www.idangero.us/framework7/docs/modal.html */
-        myApp.modal({
-          title: 'Modal Title',
+    {     myApp.modal({
           text: 'Tu n\'est qu\'une machine et mérite dêtre traiter comme tel. Je suis sur que tout ce que tu me dis est prédeterminé à l\'avance !',
           buttons: [
             {
               text: 'Close',
               close: true
-            }
+            },
+              { text: 'Valider',
+                onClick: function () {
+                    var texte="Tu n\'est qu\'une machine et mérite dêtre traiter comme tel. Je suis sur que tout ce que tu me dis est prédeterminé à l\'avance !";
+                    document.getElementById("dialogue").innerHTML+='<div class="message message-sent"><div class="message-text">'+texte+'</div> </div>' ;
+                }
+            
+              }
           ]
+        
         }) 
+
     });
     
         /* button  C */
     $(document).on("click", ".uib_w_118", function(evt)
-    {
-        /* Modals are created using custom js 
-         For examples and documentation visit http://www.idangero.us/framework7/docs/modal.html */
-        myApp.modal({
-          title: 'Modal Title',
+    {    myApp.modal({
+          
           text: 'Tu es toi et il n\'y a que toi pour déterminer qui tu es. ',
           buttons: [
             {
               text: 'Close',
               close: true
-            }
+            },
+              { text: 'Valider',
+                onClick: function () {
+                    var texte="Tu es toi et il n\'y a que toi pour déterminer qui tu es.";
+                    document.getElementById("dialogue").innerHTML+='<div class="message message-sent"><div class="message-text">'+texte+'</div> </div>' ;
+                }
+              }
           ]
         }) 
     });
@@ -513,9 +523,7 @@ function getEgnime(Id) {
         /* button  #Dialogue */
     $(document).on("click", "#Dialogue", function(evt)
     {
-         /*global activate_subpage */
-         // if(dialogue==-1){setdialogue();dialogue=1;}
-        
+              
                ajout_Lyha(1);
        ajout_Lyha(2);
        ajout_Lyha(3);
